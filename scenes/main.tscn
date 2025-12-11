@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://clhjiker1ka1x"]
+[gd_scene load_steps=6 format=3 uid="uid://clhjiker1ka1x"]
 
+[ext_resource type="PackedScene" uid="uid://csywud2x4jkf7" path="res://scenes/hazard.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://d1f6diap4h7fp" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://ck48fnkkkdqii" path="res://scenes/endpoint.tscn" id="3_sugp2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
 
@@ -66,11 +68,33 @@ position = Vector2(7.6293945e-06, -1.999939)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_o5qli")
 
+[node name="hazard" parent="Static" instance=ExtResource("1_0wfyh")]
+position = Vector2(489, -286)
+
+[node name="hazard2" parent="Static" instance=ExtResource("1_0wfyh")]
+position = Vector2(-208, -533)
+
+[node name="hazard3" parent="Static" instance=ExtResource("1_0wfyh")]
+position = Vector2(372, -28)
+
+[node name="hazard4" parent="Static" instance=ExtResource("1_0wfyh")]
+position = Vector2(-331, -27)
+
+[node name="hazard5" parent="Static" instance=ExtResource("1_0wfyh")]
+position = Vector2(207, -531)
+
+[node name="hazard6" parent="Static" instance=ExtResource("1_0wfyh")]
+position = Vector2(49, -30)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-10, 51)
 zoom = Vector2(0.97, 0.97)
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
-position = Vector2(-131, -78)
+position = Vector2(-491, 314)
 move_speed = 300.0
 roll_torque = 10.0
+jump_force = 600.0
+
+[node name="endpoint" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(468, -179)

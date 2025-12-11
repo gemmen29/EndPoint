@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck48fnkkkdqii"]
+
+[ext_resource type="Script" path="res://EndPoint.gd" id="1_endpoint"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_black"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g7e6k"]
+size = Vector3(0.59, 1.41, 1)
+surface_material_override/0 = SubResource("StandardMaterial3D_black")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdkol"]
+size = Vector2(6, 14)
+
+[node name="endpoint" type="Area2D"]
+script = ExtResource("1_endpoint")
+scale = Vector2(8, 8)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(10, 10)
+mesh = SubResource("BoxMesh_g7e6k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vdkol")

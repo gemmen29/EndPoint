@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://csywud2x4jkf7"]
+
+[ext_resource type="Script" uid="uid://c5cyx2ngg66uo" path="res://Hazard.gd" id="1_hazard"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivx7b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_red"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rxmjj"]
+surface_material_override/0 = SubResource("StandardMaterial3D_red")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awlwb"]
+size = Vector2(42.90429, 44.27393)
+
+[node name="hazard" type="Area2D"]
+script = ExtResource("1_hazard")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_ivx7b")
+position = Vector2(0, 3)
+scale = Vector2(-64.999985, 67)
+mesh = SubResource("BoxMesh_rxmjj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.49999732, 2.9999995)
+scale = Vector2(1.515, 1.515)
+shape = SubResource("RectangleShape2D_awlwb")
