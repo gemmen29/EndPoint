@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1f6diap4h7fp"]
+
+[ext_resource type="Script" uid="uid://dvc4uhlam1upq" path="res://BallController.gd" id="1_script"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u8vuu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8vuu"]
+radius = 1.9924858
+
+[node name="Player" type="RigidBody2D"]
+script = ExtResource("1_script")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(40, 40)
+mesh = SubResource("SphereMesh_u8vuu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.3881318e-21)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_u8vuu")
