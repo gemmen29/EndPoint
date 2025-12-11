@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c5cyx2ngg66uo" path="res://Hazard.gd" id="1_hazard"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivx7b"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_red"]
+blend_mode = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_red"]
 albedo_color = Color(1, 0, 0, 1)
@@ -17,10 +18,11 @@ size = Vector2(42.90429, 44.27393)
 script = ExtResource("1_hazard")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-material = SubResource("ShaderMaterial_ivx7b")
+material = SubResource("CanvasItemMaterial_red")
 position = Vector2(0, 3)
 scale = Vector2(-64.999985, 67)
 mesh = SubResource("BoxMesh_rxmjj")
+modulate = Color(1, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.49999732, 2.9999995)
